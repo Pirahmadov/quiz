@@ -1,4 +1,5 @@
 const main = document.querySelector(".main");
+const next = document.querySelector(".next")
 
 const questions = [
   {
@@ -20,7 +21,7 @@ const questions = [
     ],
   },
 ];
-
+let blocked = false
 const getQuestions = () => {
   questions.map((e) => {
     const questionBox = document.createElement("div");
@@ -31,12 +32,18 @@ const getQuestions = () => {
     e.answers.map((ans) => {
       const li = document.createElement("li");
       const variant = document.createElement("span");
+      variant.classList.add("variant")
       variant.addEventListener("click", () => {
+        if(blocked) return
         if (ans.rightAnswer) {
-          console.log("duz");
+          answer.classList.add("active");
+          blocked = true;
+          
         } else {
-          console.log("sehv");
+          answer.classList.add("error");
+          blocked = true
         }
+        
       });
       variant.innerHTML = ans.variant;
 
