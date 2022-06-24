@@ -1,0 +1,17 @@
+.active{
+    background-color: rgb(7, 204, 0);
+}
+.error{
+    background-color: red;
+}
+.variant{
+    border: 1px solid black;
+    padding: 5px;
+}
+li{
+    margin: 10px;
+}
+.variant:hover{
+    cursor: pointer;
+    background-color: blue;
+}
